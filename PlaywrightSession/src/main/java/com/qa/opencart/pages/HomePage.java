@@ -10,15 +10,19 @@ public class HomePage {
 	private String search="input[placeholder='Search']";
 	private String searchicon="button[class='btn btn-default btn-lg']";
 	private String seachpageHeader="div[id='content'] h1";
+	private String loginLink="a:text('Login')";
+	private String myAccountLink="//a[@title='My Account']";
+
 	
 	//2 page constructor
 
-	public HomePage(Page page) {
-		this.page=page;
-	}
+	
 	
 	//3. page action/methods
 	
+	public HomePage(Page page) {
+		this.page = page;
+	}
 	public String getHomepageTitle() {
 		String title= page.title();
 		System.out.println("page Ttile is------"+title);
@@ -35,6 +39,12 @@ public class HomePage {
 		String header= page.textContent(seachpageHeader);
 		System.out.println("serach header"+header);
 		return header;
+	}
+	
+	public LoginPage navigateToLoginPage() {
+		page.click(myAccountLink);
+		page.click(loginLink);
+		return new LoginPage(page);
 	}
 	
 
