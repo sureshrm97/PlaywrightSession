@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
-encoding//src/main/java=UFT-8
-encoding//src/main/resources=UFT-8
-encoding//src/test/java=UFT-8
+encoding//src/main/java/com/qa/opencart/pages/HomePage.java=UTF-8
+encoding//src/main/java/com/qa/opencartFactory/playwrightFactory.java=UTF-8
 encoding//src/test/java/FirefoxPlaywright/Alerts.java=UTF-16
 encoding//src/test/java/Playwright/Automaticlogin.java=UTF-16
-encoding//src/test/resources=UFT-8
-encoding/<project>=UFT-8
+encoding//src/test/java/Playwright/BrowserContext.java=UTF-8
+encoding//src/test/java/Playwright/HandlingFrame2.java=UTF-8
+encoding//src/test/java/com/qa/opencart/Tests/HomepageTest1.java=UTF-8

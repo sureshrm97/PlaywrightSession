@@ -5,11 +5,9 @@
     <classes>
       <class name="com.qa.opencart.Tests.HomepageTest1">
         <methods>
-          <include name="teardown"/>
-          <include name="searchTest"/>
-          <include name="searchTest"/>
           <include name="setup"/>
-          <include name="homePageTitleTest"/>
+          <include name="searchTest" invocation-numbers="2"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- com.qa.opencart.Tests.HomepageTest1 -->
     </classes>

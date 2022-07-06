@@ -1,45 +1,28 @@
 package com.qa.opencart.Tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.microsoft.playwright.Page;
-import com.qa.opencart.pages.HomePage;
-import com.qa.opencartFactory.playwrightFactory;
+import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.constants.AppConstants;
 
-public class HomepageTest1 {
+public class HomepageTest1 extends BaseTest{
 	
-	playwrightFactory pf;
-	Page page;
+	
 
-	HomePage homepage;
-
-	@BeforeTest
-	public void setup() {
-		pf = new playwrightFactory();
-		page = pf.initBrowser("chrome");
-		//page = pf.initBrowser("webkit");
-		//page = pf.initBrowser("chromium");
-		//page = pf.initBrowser("firefox");
-
-		homepage = new HomePage(page);
-
-	}
 
 	@Test
 	public void homePageTitleTest() {
 		String actualtitle = homepage.getHomepageTitle();
-		Assert.assertEquals(actualtitle, "Your Store");
+		Assert.assertEquals(actualtitle, AppConstants.LOGIN_PAGE_TITLE);
 	}
     
 	
 	@Test
 	public void homePageUrlTest() {
 		String actualtitle = homepage.getHomePageURL();
-		Assert.assertEquals(actualtitle, "https://naveenautomationlabs.com/opencart/");
+		Assert.assertEquals(actualtitle, prop.getProperty("url"));
 	}
 
 	@DataProvider
@@ -63,10 +46,6 @@ public class HomepageTest1 {
 
 	}
 
-	@AfterTest
-	public void teardown() {
-		page.context().browser().close();
-	}
 
 
 }
